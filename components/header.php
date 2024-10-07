@@ -107,6 +107,10 @@
 							<li>
 								<a href="contact.html">Contact</a>
 							</li>
+
+							<li>
+								<a href="signup.php">sign up</a>
+							</li>
 						</ul>
 					</div>	
 
