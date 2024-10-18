@@ -1,3 +1,7 @@
+
+<?php
+include("model/query.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,16 +84,12 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
+								<a href="index.php">Home</a>
+								
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="product.php">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
@@ -107,10 +107,43 @@
 							<li>
 								<a href="contact.html">Contact</a>
 							</li>
-
-							<li>
-								<a href="signup.php">sign up</a>
+							<?php
+							if(isset($_SESSION['userName'])){
+								?>
+								
+								<li>
+								<a href="logout.php">LogOut</a>
 							</li>
+							<?php
+							if($_SESSION['userRole']=="user"){
+								?>
+									<li>
+								<a href="profile.php">profile</a>
+							</li>
+								<?php
+							}else{
+								?>
+									<li>
+								<a href="panel/index.php">panel</a>
+							</li>
+								
+								<?php
+							}
+							?>
+						
+								<?php
+							}else{
+								?>
+								   <li>
+								<a href="signup.php">Sign Up</a>
+							</li>
+							<li>
+								<a href="login	.php">Sign IN</a>
+							</li>
+								<?php
+							}
+							?>
+                         
 						</ul>
 					</div>	
 
@@ -207,7 +240,7 @@
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="product.php">Shop</a>
 				</li>
 
 				<li>
@@ -329,3 +362,5 @@
 			</div>
 		</div>
 	</div>
+
+		
